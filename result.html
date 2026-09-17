@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentiment Result</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+    body { background-color: #f8f9fa; }
+    .container { margin-top: 60px; max-width: 700px; }
+    .card { padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .badge-positive { background-color: #28a745; color: white; }
+    .badge-negative { background-color: #dc3545; color: white; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2 class="card-title text-center mb-4">Analysis Result</h2>
+        <p><strong>Original text:</strong></p>
+        <p class="text-muted">{{ original_text }}</p>
+        <hr>
+        <p class="text-center">
+            <span class="badge badge-{{ sentiment }} p-2" style="font-size: 1.2rem;">
+                {{ sentiment | capitalize }}
+            </span>
+        </p>
+        <p class="text-center text-muted">Confidence: {{ confidence }}%</p>
+        <a href="/" class="btn btn-secondary btn-block mt-3">Analyse Another</a>
+    </div>
+</div>
+</body>
+</html>
